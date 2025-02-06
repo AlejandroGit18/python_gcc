@@ -1,0 +1,99 @@
+from pydantic import BaseModel
+from typing import Optional
+from datetime import date
+
+class BaseGestion(BaseModel):
+    opcion: int
+
+class GestionCrear(BaseGestion):
+    id_campana: Optional[int]
+    id_deudor: Optional[int]
+    usuario: Optional[str]
+    nombre: Optional[str]
+    direccion_casa: Optional[str]
+    direccion_trabajo: Optional[str]
+    lugar_trabajo: Optional[str]
+    email: Optional[str]
+    nit: Optional[str]
+    fecha_nacimiento: Optional[date]
+    dpi: Optional[str]
+    telefono_celular: Optional[str]
+    telefono_casa: Optional[str]
+    telefono_alterno: Optional[str]
+    telefono_trabajo: Optional[str]
+    tipo_cuenta1: Optional[str]
+    no_cuenta1: Optional[str]
+    saldo1: Optional[float]
+    tipo_cuenta2: Optional[str]
+    no_cuenta2: Optional[str]
+    saldo2: Optional[float]
+    tipo_cuenta3: Optional[str]
+    no_cuenta3: Optional[str]
+    saldo3: Optional[float]
+    tipo_cuenta4: Optional[str]
+    no_cuenta4: Optional[str]
+    saldo4: Optional[float]
+    tipo_cuenta5: Optional[str]
+    no_cuenta5: Optional[str]
+    saldo5: Optional[float]
+    concepto1: Optional[str]
+    descripcion1: Optional[str]
+    concepto2: Optional[str]
+    descripcion2: Optional[str]
+    concepto3: Optional[str]
+    descripcion3: Optional[str]
+    concepto4: Optional[str]
+    descripcion4: Optional[str]
+    estado: Optional[bool]
+    usuario_operacion: Optional[int]
+
+class GestionActualizar(GestionCrear):
+    id_gestiones: int
+    id_campana: Optional[int]
+    id_deudor: Optional[int]
+    usuario: Optional[str]
+    nombre: Optional[str]
+    direccion_casa: Optional[str]
+    direccion_trabajo: Optional[str]
+    lugar_trabajo: Optional[str]
+    email: Optional[str]
+    nit: Optional[str]
+    fecha_nacimiento: Optional[date]
+    dpi: Optional[str]
+    telefono_celular: Optional[str]
+    telefono_casa: Optional[str]
+    telefono_alterno: Optional[str]
+    telefono_trabajo: Optional[str]
+    tipo_cuenta1: Optional[str]
+    no_cuenta1: Optional[str]
+    saldo1: Optional[float]
+    tipo_cuenta2: Optional[str]
+    no_cuenta2: Optional[str]
+    saldo2: Optional[float]
+    tipo_cuenta3: Optional[str]
+    no_cuenta3: Optional[str]
+    saldo3: Optional[float]
+    tipo_cuenta4: Optional[str]
+    no_cuenta4: Optional[str]
+    saldo4: Optional[float]
+    tipo_cuenta5: Optional[str]
+    no_cuenta5: Optional[str]
+    saldo5: Optional[float]
+    concepto1: Optional[str]
+    descripcion1: Optional[str]
+    concepto2: Optional[str]
+    descripcion2: Optional[str]
+    concepto3: Optional[str]
+    descripcion3: Optional[str]
+    concepto4: Optional[str]
+    descripcion4: Optional[str]
+    estado: Optional[bool]
+    usuario_operacion: Optional[int]
+
+
+class GestionConsultaPorId(BaseGestion):
+    id_gestiones: int
+
+class GestionConsultaPorUsuarioCampana(BaseGestion):
+    id_usuario: int
+    id_campana: int
